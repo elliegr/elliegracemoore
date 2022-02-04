@@ -2,19 +2,15 @@
 action_label: Read More &rarr;
 action_link: /about
 action_type: text
-description: Sit down, relax, and get to know Hugo Apéro. Built on top of Blogophonic,
-  we wanted to create a polished Hugo theme with the right features for a true personal
-  website. We set out to create a theme that is a pleasure to learn, and one that
-  helps others get to know you better. It is more than a blog, with flexible custom
-  layouts that help you introduce yourself online.
+description: An avid NRC user with great ambition and an incredible desire to learn. My enthusiasm and creativity are oftentimes endless, and I am deeply passionate about data and analytics. My journey with NRC has pushed me to new lengths and I am eager to apply this ambitious mindset to statistical learning and data analysis.
 image_left: true
 images:
-- img/revoir.jpg
+- img/homepic.png
 show_action_link: true
 show_social_links: true
-subtitle: A Hugo theme you'll want to hang out with
+subtitle: MS in Statistics
 text_align_left: false
-title: Hugo Apéro
+title: Ellie Grace Moore 
 type: home
 ---
 

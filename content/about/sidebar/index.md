@@ -1,19 +1,23 @@
 ---
 ## Configure sidebar content in narrow column
-author: "Hugo Apéro"
-role: "A Hugo theme"
+author: "Ellie Grace Moore"
+role: ""
 avatar_shape: rounded # circle, square, rounded, leave blank to exclude
 show_social_links: true # specify social accounts in site config
-audio_link_label: "How to say my name" # leave blank to exclude
-link_list_label: "Interests" # bookmarks, elsewhere, etc.
-link_list:
-- name: Paris
-  url: https://en.wikipedia.org/wiki/Paris
-- name: Pastries
-  url: https://en.wikipedia.org/wiki/Pastry
-- name: People
-  url: https://en.wikipedia.org/wiki/People
+
+audio_link_label: "My all-time favorite song" # leave blank to exclude
+
 ---
 
 ** index doesn't contain a body, just front matter above.
 See about/list.html in the layouts folder **
+
+Besides my love of data science and analytics, here are some other topics I love chatting about: 
+
+* Mushroom foraging :mushroom:
+* Tidyverse and tidy data 
+* The Killers :guitar:
+* Statistical inference and communication
+* Art and graphic design :art:
+* Avatar: The Last Airbender 
+* Running and Nike Run Club :runner:

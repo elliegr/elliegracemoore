@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://eager-perlman-08bb4c.netlify.app"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Ellie Grace Moore"
@@ -33,7 +33,6 @@ enableEmoji = true
   description = ""
   favicon = "/img/favicon.ico"
   logo = "/img/mushie2.png"
-  mainSections = ["blog", "project", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
