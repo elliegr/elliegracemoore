@@ -1,12 +1,16 @@
 ---
 ## Configure page content in wide column
-title: "Why statistics?"
+title: "Why Statistics?" # leave blank to exclude
+number_featured: 0 # pulling from mainSections in config.toml
+use_featured: false # if false, use most recent by date
+number_categories: 0 # set to zero to exclude
+
 show_intro: true
 intro: |
- Smart smart fun nice things about stats to say here
-show_outro: true
-outro: |
-  <i class="fas fa-glass-cheers pr2"></i>Sincere thanks to [Maëlle Salmon](https://masalmon.eu/) for her help naming this Hugo theme!
+  smart fun things about stats here  
+
+  
+show_outro: false
 ---
 
 ** index doesn't contain a body, just front matter above.
