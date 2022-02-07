@@ -5,13 +5,16 @@ categories:
 - package
 date: "2019-07-03"
 draft: false
-excerpt: Graduated Magna Cum Laude in August 2020 with a BS in Mathematics Education.
+excerpt: Graduated Magna Cum Laude with a BS in Mathematics Education. 
 layout: single
 tags:
 - hugo-site
 title: Taylor University
 ---
 
+![Tachyons Logo Script](tachyons-logo-script.png)
+
+## [Tachyons](http://tachyons.io) is a design system that allows you to design gorgeous interfaces in the browser with little effort.
 
 ---
 
