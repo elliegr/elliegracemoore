@@ -1,15 +1,12 @@
 ---
-categories:
-- Theme Features
-- R
-- package
 date: "2019-07-03"
 draft: false
 excerpt: Graduated Magna Cum Laude with a BS in Mathematics Education. 
 layout: single
 tags:
 - hugo-site
-title: Taylor University
+title: Deer Valley Ranch
+subtitle: Kids and Teens Program Leader
 ---
 
 ![Tachyons Logo Script](tachyons-logo-script.png)

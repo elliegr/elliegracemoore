@@ -10,19 +10,10 @@ excerpt: This theme has a form-to-email feature built in, thanks to the simple F
   integration. All you need to activate the form is a valid recipient email address
   saved in the form front matter.
 layout: single
-links:
-- icon: door-open
-  icon_pack: fas
-  name: website
-  url: https://bakeoff.netlify.com/
-- icon: github
-  icon_pack: fab
-  name: code
-  url: https://github.com/apreshill/bakeoff
 subtitle: An R Package
 tags:
 - hugo-site
-title: Bakeoff
+title: Wake Forest University
 ---
 
 ![Formspree Logo](formspree-logo.png)

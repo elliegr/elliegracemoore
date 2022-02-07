@@ -9,7 +9,7 @@ excerpt: Graduated Magna Cum Laude in August 2020 with a BS in Mathematics Educa
 layout: single
 tags:
 - hugo-site
-title: Taylor University
+title: Mathematics Education
 ---
 
 
