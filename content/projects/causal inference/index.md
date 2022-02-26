@@ -13,7 +13,8 @@ links:
   url: https://github.com/apreshill/bakeoff
 location: Sydney, Australia
 show_post_time: false
-title: Statistical Learning 
+title: Causal Inference
 ---
 
 I'm really excited to give this talk! Stay tuned for video and slides.
+

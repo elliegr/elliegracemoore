@@ -1,6 +1,6 @@
 ---
 author: Ellie Grace Moore
-date: "2021-01-12"
+date: "2022-01-12"
 draft: false
 excerpt: Here is a talk I gave on making awesome personal websites using Hugo, blogdown,
   GitHub, and Netlify.
@@ -13,7 +13,7 @@ links:
   url: https://github.com/apreshill/bakeoff
 location: Sydney, Australia
 show_post_time: false
-title: Statistical Learning 
+title: Data Visualization
 ---
 
 I'm really excited to give this talk! Stay tuned for video and slides.
