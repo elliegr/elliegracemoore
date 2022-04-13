@@ -1,19 +1,18 @@
 ---
 author: Ellie Grace Moore
-date: "2022-01-12"
+date: "2021-01-12"
 draft: false
-excerpt: Here is a talk I gave on making awesome personal websites using Hugo, blogdown,
-  GitHub, and Netlify.
+excerpt: Here are projects and code that demonstrate numerous ways to visualize data.
 featured: true
 layout: single
 links:
 - icon: github
   icon_pack: fab
   name: code
-  url: https://github.com/apreshill/bakeoff
+  url: https://github.com/elliegr/data-viz
 location: Sydney, Australia
 show_post_time: false
 title: Data Visualization
 ---
 
-I'm really excited to give this talk! Stay tuned for video and slides.
+Visualising data can be an essential part of the analysis process. Taking a complex dataframe and translating it into bubble plots, 3D scatterplots, or a plot to help visualize the missing data can help one make observations and draw conclusions about the data.

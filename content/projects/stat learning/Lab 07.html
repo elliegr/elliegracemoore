@@ -1,0 +1,327 @@
+---
+title: "Lab 07"
+author: "Ellie Grace Moore"
+date: "03/12/2020"
+output: 
+  html_document: 
+    highlight: haddock
+    theme: cosmo
+    df_print: paged
+---
+
+<script src="Lab 07_files/header-attrs/header-attrs.js"></script>
+
+
+<div class="line-block">        For this lab we will fit and compare the following three methods: a random forest, boosting decision trees, and elastic net. First we will set up our data sets (along with converting “extrovert” to a factor) and then we will fit a model using each of the methods mentioned above, then we will compare them all at the end.</div>
+<pre class="r"><code>set.seed(7)
+reddit &lt;- read_csv(&quot;reddit_data.csv&quot;)</code></pre>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   extrovert = col_logical()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<pre class="r"><code>reddit$extrovert &lt;- as.factor(reddit$extrovert)
+
+reddit_split &lt;- initial_split(reddit, prop=0.5)
+reddit_train &lt;- training(reddit_split)
+reddit_test &lt;- testing(reddit_split)
+
+reddit_cv &lt;- vfold_cv(reddit_train, v=10)
+
+rec &lt;- recipe(extrovert ~., data = reddit_train)</code></pre>
+<div id="random-forest" class="section level3">
+<h3>Random Forest</h3>
+<pre class="r"><code>set.seed(7)
+model_spec &lt;- rand_forest(
+  mode = &quot;classification&quot;,
+  mtry = 25,
+  trees = tune()
+) %&gt;%
+  set_engine(&quot;ranger&quot;)
+
+grid &lt;- expand_grid(trees = c(10, 25, 50, 100, 200, 300))
+rand_forest &lt;- tune_grid(model_spec,
+                   preprocessor = rec,
+                   grid = grid,
+                   resamples = reddit_cv)
+
+rand_forest %&gt;% collect_metrics() %&gt;%
+  filter(.metric == &quot;accuracy&quot;) %&gt;%
+  arrange(desc(mean))</code></pre>
+<pre><code>## # A tibble: 6 × 7
+##   trees .metric  .estimator  mean     n std_err .config             
+##   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;fct&gt;               
+## 1   100 accuracy binary     0.728    10  0.0252 Preprocessor1_Model4
+## 2    10 accuracy binary     0.72     10  0.0223 Preprocessor1_Model1
+## 3    50 accuracy binary     0.72     10  0.0267 Preprocessor1_Model3
+## 4   300 accuracy binary     0.72     10  0.0280 Preprocessor1_Model6
+## 5   200 accuracy binary     0.716    10  0.0276 Preprocessor1_Model5
+## 6    25 accuracy binary     0.708    10  0.0253 Preprocessor1_Model2</code></pre>
+<pre class="r"><code>final_spec &lt;- rand_forest(
+  mode = &quot;classification&quot;,
+  mtry = 25,
+  trees = 25
+) %&gt;%
+  set_engine(&quot;ranger&quot;)
+
+final_model &lt;- fit(final_spec,
+                  extrovert ~ .,
+                   data = reddit_train)
+
+randfor_results &lt;- final_model %&gt;%
+  predict(new_data = reddit_test) %&gt;%
+  bind_cols(reddit_test) %&gt;%
+  metrics(truth = extrovert, estimate = .pred_class)
+
+method &lt;- randfor_results$method &lt;- &quot;Random Forest&quot;
+kable(randfor_results)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">.metric</th>
+<th align="left">.estimator</th>
+<th align="right">.estimate</th>
+<th align="left">method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">accuracy</td>
+<td align="left">binary</td>
+<td align="right">0.7520000</td>
+<td align="left">Random Forest</td>
+</tr>
+<tr class="even">
+<td align="left">kap</td>
+<td align="left">binary</td>
+<td align="right">0.3501048</td>
+<td align="left">Random Forest</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="boosting" class="section level3">
+<h3>Boosting</h3>
+<pre class="r"><code>set.seed(7)
+boost_spec &lt;- boost_tree(
+  mode = &quot;classification&quot;,
+  tree_depth = 1,
+  trees = tune(),
+  learn_rate = 0.01
+) %&gt;%
+set_engine(&quot;xgboost&quot;)
+
+boosted &lt;- tune_grid(boost_spec,
+                   preprocessor = rec,
+                   grid = grid,
+                   resamples = reddit_cv)
+boosted %&gt;% 
+  collect_metrics() %&gt;%
+  filter(.metric == &quot;accuracy&quot;) %&gt;%
+  arrange(desc(mean))</code></pre>
+<pre><code>## # A tibble: 6 × 7
+##   trees .metric  .estimator  mean     n std_err .config             
+##   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;fct&gt;               
+## 1   300 accuracy binary     0.716    10  0.0210 Preprocessor1_Model6
+## 2   200 accuracy binary     0.7      10  0.0225 Preprocessor1_Model5
+## 3    10 accuracy binary     0.696    10  0.0261 Preprocessor1_Model1
+## 4    50 accuracy binary     0.688    10  0.0244 Preprocessor1_Model3
+## 5   100 accuracy binary     0.688    10  0.0252 Preprocessor1_Model4
+## 6    25 accuracy binary     0.684    10  0.0256 Preprocessor1_Model2</code></pre>
+<pre class="r"><code>final_spec &lt;- boost_tree(
+  mode = &quot;classification&quot;,
+  mtry = 25,
+  trees = 200
+) %&gt;%
+  set_engine(&quot;xgboost&quot;)
+
+final_model &lt;- fit(final_spec,
+                  extrovert ~ .,
+                   data = reddit_train)
+
+boost_results &lt;- final_model %&gt;%
+  predict(new_data = reddit_test) %&gt;%
+  bind_cols(reddit_test) %&gt;%
+  metrics(truth = extrovert, estimate = .pred_class)
+method &lt;- boost_results$method &lt;- &quot;Boosting&quot;
+kable(boost_results)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">.metric</th>
+<th align="left">.estimator</th>
+<th align="right">.estimate</th>
+<th align="left">method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">accuracy</td>
+<td align="left">binary</td>
+<td align="right">0.7040000</td>
+<td align="left">Boosting</td>
+</tr>
+<tr class="even">
+<td align="left">kap</td>
+<td align="left">binary</td>
+<td align="right">0.2110874</td>
+<td align="left">Boosting</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="elastic-net" class="section level3">
+<h3>Elastic Net</h3>
+<pre class="r"><code>set.seed(7)
+rec &lt;- recipe(extrovert ~ ., data = reddit_train)
+
+penalty_spec &lt;- logistic_reg(penalty = tune(), mixture = tune()) %&gt;%
+  set_engine(&quot;glmnet&quot;)
+
+grid &lt;- expand_grid(penalty = seq(0, 100, by = 10),
+                    mixture = seq(0, 1, by = 0.2))
+
+results &lt;- tune_grid(penalty_spec, 
+                      preprocessor = rec,
+                     grid = grid,
+                     resamples = reddit_cv)
+
+results %&gt;% collect_metrics() %&gt;%
+  filter(.metric == &quot;accuracy&quot;) %&gt;%
+  arrange(desc(mean))</code></pre>
+<pre><code>## # A tibble: 66 × 8
+##    penalty mixture .metric  .estimator  mean     n std_err .config              
+##      &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;fct&gt;                
+##  1      20     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model03
+##  2      30     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model04
+##  3      40     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model05
+##  4      50     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model06
+##  5      60     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model07
+##  6      70     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model08
+##  7      80     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model09
+##  8      90     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model10
+##  9     100     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model11
+## 10      10     0.2 accuracy binary     0.672    10  0.0278 Preprocessor1_Model13
+## # … with 56 more rows</code></pre>
+<pre class="r"><code>set.seed(7)
+rec &lt;- recipe(extrovert ~ ., data = reddit_train)
+
+penalty_spec &lt;- logistic_reg(penalty = tune(), mixture = tune()) %&gt;%
+  set_engine(&quot;glmnet&quot;)
+
+grid &lt;- expand_grid(penalty = seq(0, 10, by = 1),
+                    mixture = seq(0, 1, by = 0.1))
+
+results &lt;- tune_grid(penalty_spec, 
+                      preprocessor = rec,
+                     grid = grid,
+                     resamples = reddit_cv)</code></pre>
+<pre class="r"><code>results %&gt;% collect_metrics() %&gt;%
+  filter(.metric == &quot;accuracy&quot;) %&gt;%
+  arrange(desc(mean))</code></pre>
+<pre><code>## # A tibble: 121 × 8
+##    penalty mixture .metric  .estimator  mean     n std_err .config              
+##      &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;fct&gt;                
+##  1       5     0   accuracy binary     0.68     10  0.0260 Preprocessor1_Model0…
+##  2       4     0   accuracy binary     0.676    10  0.0263 Preprocessor1_Model0…
+##  3       6     0   accuracy binary     0.676    10  0.0270 Preprocessor1_Model0…
+##  4       7     0   accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+##  5       1     0.1 accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+##  6       2     0.1 accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+##  7       3     0.1 accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+##  8       4     0.1 accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+##  9       5     0.1 accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+## 10       6     0.1 accuracy binary     0.672    10  0.0278 Preprocessor1_Model0…
+## # … with 111 more rows</code></pre>
+<pre class="r"><code>set.seed(7)
+rec &lt;- recipe(extrovert ~ ., data = reddit_train)
+
+penalty_spec &lt;- logistic_reg(penalty = 2, mixture = 0) %&gt;%
+  set_engine(&quot;glmnet&quot;)
+
+results &lt;- last_fit(penalty_spec,
+                    preprocessor = rec,
+                    split = reddit_split)
+elnet_results &lt;- results %&gt;% 
+  collect_metrics()
+method &lt;- elnet_results$method &lt;- &quot;Elastic Net&quot;
+kable(elnet_results[,-4])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">.metric</th>
+<th align="left">.estimator</th>
+<th align="right">.estimate</th>
+<th align="left">method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">accuracy</td>
+<td align="left">binary</td>
+<td align="right">0.6920000</td>
+<td align="left">Elastic Net</td>
+</tr>
+<tr class="even">
+<td align="left">roc_auc</td>
+<td align="left">binary</td>
+<td align="right">0.6105143</td>
+<td align="left">Elastic Net</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>total_results &lt;- bind_rows(randfor_results, boost_results, elnet_results)
+kable(total_results[, -5])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">.metric</th>
+<th align="left">.estimator</th>
+<th align="right">.estimate</th>
+<th align="left">method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">accuracy</td>
+<td align="left">binary</td>
+<td align="right">0.7520000</td>
+<td align="left">Random Forest</td>
+</tr>
+<tr class="even">
+<td align="left">kap</td>
+<td align="left">binary</td>
+<td align="right">0.3501048</td>
+<td align="left">Random Forest</td>
+</tr>
+<tr class="odd">
+<td align="left">accuracy</td>
+<td align="left">binary</td>
+<td align="right">0.7040000</td>
+<td align="left">Boosting</td>
+</tr>
+<tr class="even">
+<td align="left">kap</td>
+<td align="left">binary</td>
+<td align="right">0.2110874</td>
+<td align="left">Boosting</td>
+</tr>
+<tr class="odd">
+<td align="left">accuracy</td>
+<td align="left">binary</td>
+<td align="right">0.6920000</td>
+<td align="left">Elastic Net</td>
+</tr>
+<tr class="even">
+<td align="left">roc_auc</td>
+<td align="left">binary</td>
+<td align="right">0.6105143</td>
+<td align="left">Elastic Net</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">          By looking at the table above, we are able to see that <strong>boosting</strong> results in the highest accuracy with a value of 0.724. Then a random forest closely follows with an accuracy of 0.716, then elastic net–which turns out to be ridge regression due to our mixture value being 0–yields the lowest accuracy with a value of 0.672.</div>
+<div class="line-block">          Along the way, I made numerous judgments and conclusions based on the data. First, I noticed that “extrovert” is an indicator variable and thus must be converted to a factor. Secondly, I realized that when using a classification method, the metric we get is “accuracy” and thus it must be sorted in descending order since we want a higher accuracy–opposed to a lower RMSE. Next, I skipped right to elastic net versus first trying out ridge and lasso. Since elastic net is a combination of ridge and lasso, simply tuning the penalty and mixture value will tell me whether or not a ridge or lasso model will be appropriate for this data.</div>
+</div>
