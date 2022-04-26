@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Professional Journey on Ellie Grace Moore</title>
+    <link>https://elliegracemoore.netlify.app/work/</link>
+    <description>Recent content in My Professional Journey on Ellie Grace Moore</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 23 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://elliegracemoore.netlify.app/work/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wake Forest University</title>
+      <link>https://elliegracemoore.netlify.app/work/wak/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/wak/</guid>
+      <description>Let The Numbers do The Talking     blah blah blah yay wake forest</description>
+    </item>
+    
+    <item>
+      <title>Deer Valley Ranch</title>
+      <link>https://elliegracemoore.netlify.app/work/dvr/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/dvr/</guid>
+      <description>Going Out West     blah blah blah Colorado this Colorado that</description>
+    </item>
+    
+    <item>
+      <title>National Air and Space Administration (NASA)</title>
+      <link>https://elliegracemoore.netlify.app/work/nasa/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/nasa/</guid>
+      <description>“Grid is the very first CSS module created specifically to solve the layout problems we&amp;rsquo;ve all been hacking our way around for as long as we&amp;rsquo;ve been making websites.”     — Chris House, A Complete Guide to CSS Grid Layout 1
+ Since I began building websites in Y2K, I&amp;rsquo;ve lost count how many times the phrase &amp;ldquo;&amp;hellip;there&amp;rsquo;s got to be a better way to do this&amp;rdquo; has passed my lips.</description>
+    </item>
+    
+    <item>
+      <title>Taylor University</title>
+      <link>https://elliegracemoore.netlify.app/work/taylor/</link>
+      <pubDate>Sun, 17 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/taylor/</guid>
+      <description>Say some good stuff about TU</description>
+    </item>
+    
+    <item>
+      <title>Cameron Mitchell Restaurants</title>
+      <link>https://elliegracemoore.netlify.app/work/cap/</link>
+      <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/cap/</guid>
+      <description> Cap City Fine Diner &amp;amp; Bar     things about cap city here
+The Avenue Steak Tavern     </description>
+    </item>
+    
+  </channel>
+</rss>

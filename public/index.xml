@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ellie Grace Moore</title>
+    <link>https://elliegracemoore.netlify.app/</link>
+    <description>Recent content on Ellie Grace Moore</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://elliegracemoore.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Causal Inference</title>
+      <link>https://elliegracemoore.netlify.app/projects/causal-inference/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/projects/causal-inference/</guid>
+      <description>I&amp;rsquo;m really excited to give this talk! Stay tuned for video and slides.</description>
+    </item>
+    
+    <item>
+      <title>Data Visualization</title>
+      <link>https://elliegracemoore.netlify.app/projects/data-viz/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/projects/data-viz/</guid>
+      <description>Visualising data can be an essential part of the analysis process. Taking a complex dataframe and translating it into bubble plots, 3D scatterplots, or a plot to help visualize the missing data can help one make observations and draw conclusions about the data.</description>
+    </item>
+    
+    <item>
+      <title>Statistical Learning</title>
+      <link>https://elliegracemoore.netlify.app/projects/stat-learning/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/projects/stat-learning/</guid>
+      <description>I&amp;rsquo;m really excited to give this talk! Stay tuned for video and slides.</description>
+    </item>
+    
+    <item>
+      <title>Tidy Data</title>
+      <link>https://elliegracemoore.netlify.app/projects/tidy-data/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/projects/tidy-data/</guid>
+      <description>I&amp;rsquo;m really excited to give this talk! Stay tuned for video and slides.</description>
+    </item>
+    
+    <item>
+      <title>Wake Forest University</title>
+      <link>https://elliegracemoore.netlify.app/work/wak/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/wak/</guid>
+      <description>Let The Numbers do The Talking     blah blah blah yay wake forest</description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://elliegracemoore.netlify.app/education/wake/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/education/wake/</guid>
+      <description>&amp;ldquo;I will work harder.&amp;rdquo;     This quote comes from the classic George Orwell book &amp;lt;\it Animal Farm&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>Deer Valley Ranch</title>
+      <link>https://elliegracemoore.netlify.app/work/dvr/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/dvr/</guid>
+      <description>Going Out West     blah blah blah Colorado this Colorado that</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://elliegracemoore.netlify.app/contact/</link>
+      <pubDate>Mon, 25 Feb 2019 13:38:41 -0600</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/contact/</guid>
+      <description>** Contact page don&amp;rsquo;t contain a body, just the front matter above. See form.html in the layouts folder.
+Formspree requires a (free) account and new form to be set up. The link is made on the final published url in the field: Restrict to Domain. It is possible to register up to 2 emails free and you can select which one you want the forms to go to within Formspree in the Settings tab.</description>
+    </item>
+    
+    <item>
+      <title>Typography Styles &amp; Element Examples</title>
+      <link>https://elliegracemoore.netlify.app/elements/</link>
+      <pubDate>Mon, 18 Feb 2019 12:27:33 -0600</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/elements/</guid>
+      <description>Font Sizes   A A A A A A A A   6rem
+(96px) 5rem
+(80px) 3rem
+(48px) 2.25rem
+(36px) 1.5rem
+(24px) 1.25rem
+(20px) 1rem
+(16px) .875rem
+(14px)     Type Samples Head&amp;shy;line Sub&amp;shy;head&amp;shy;line Level 1 Heading One page to rule them all...well, not really. This page displays sample typography and page elements to illustrate their style. Things like headings and paragraphs showing the beautiful type scale, form elements, tabular data, and image layouts just to name a few.</description>
+    </item>
+    
+    <item>
+      <title>National Air and Space Administration (NASA)</title>
+      <link>https://elliegracemoore.netlify.app/work/nasa/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/nasa/</guid>
+      <description>“Grid is the very first CSS module created specifically to solve the layout problems we&amp;rsquo;ve all been hacking our way around for as long as we&amp;rsquo;ve been making websites.”     — Chris House, A Complete Guide to CSS Grid Layout 1
+ Since I began building websites in Y2K, I&amp;rsquo;ve lost count how many times the phrase &amp;ldquo;&amp;hellip;there&amp;rsquo;s got to be a better way to do this&amp;rdquo; has passed my lips.</description>
+    </item>
+    
+    <item>
+      <title>Regression</title>
+      <link>https://elliegracemoore.netlify.app/projects/regression/</link>
+      <pubDate>Sat, 12 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/projects/regression/</guid>
+      <description>I&amp;rsquo;m really excited to give this talk! Stay tuned for video and slides.</description>
+    </item>
+    
+    <item>
+      <title>Mathematics Education</title>
+      <link>https://elliegracemoore.netlify.app/education/taylor/</link>
+      <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/education/taylor/</guid>
+      <description>Because Speed     Building this static site generator theme was the first time I used an Atomic (or Functional) CSS system like Tachyons. It&amp;rsquo;s a design system that provides very small (which means fast) CSS modules that you can use in your HTML. So, rather than writing every line of CSS, you apply the style you need as you write your HTML with easy to understand shorthand class names.</description>
+    </item>
+    
+    <item>
+      <title>Taylor University</title>
+      <link>https://elliegracemoore.netlify.app/work/taylor/</link>
+      <pubDate>Sun, 17 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/taylor/</guid>
+      <description>Say some good stuff about TU</description>
+    </item>
+    
+    <item>
+      <title>Cameron Mitchell Restaurants</title>
+      <link>https://elliegracemoore.netlify.app/work/cap/</link>
+      <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/work/cap/</guid>
+      <description> Cap City Fine Diner &amp;amp; Bar     things about cap city here
+The Avenue Steak Tavern     </description>
+    </item>
+    
+    <item>
+      <title>Contributors</title>
+      <link>https://elliegracemoore.netlify.app/contributors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/contributors/</guid>
+      <description>Thank you to all the folks who have contributed both technical and creative skills to this project:
+   Desirée De Leon 🦒 (designed 5 of the custom color themes, made illustrations for the workshop, and provided general aesthetic feedback along the way)
+   Garrick Aden-Buie 🧙‍♀️ (debugged headroom.js and lent his panelset.js code to the theme)
+   Allison Horst 🐕 (awesome illustrations of campfires, seedlings, and evergreens, as well as my R Markdown hedgehog mascot 🦔)</description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>https://elliegracemoore.netlify.app/license/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/license/</guid>
+      <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.
+  </description>
+    </item>
+    
+  </channel>
+</rss>

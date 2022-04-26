@@ -1,0 +1,193 @@
+---
+title: "Lab 02 - Propensity Scores"
+author: ""
+output: html_document
+date: '2022-02-23'
+---
+
+```{r}
+library(tidyverse)
+library(ggdag)
+library(broom)
+```
+
+# Exercise 1
+
+```{r}
+good_experience ~ spent_money + friendly_rep + friendly_customer + mood + time + employee_experience + age + gender
+spent_money ~ income + need_things + shopaholic + sales + want_things + gender 
+shopaholic ~ want_things + sales + mood + gender + age
+```
+
+# Exercise 2
+
+```{r}
+dag <- dagify(
+good_experience ~ spent_money + friendly_rep + friendly_customer + mood + time + employee_experience + age + gender,
+spent_money ~ income + need_things + shopaholic + sales + want_things + gender, 
+shopaholic ~ want_things + sales + mood + gender + age,
+  exposure = "good_experience",
+  outcome = "spent_money",
+  labels = c(
+    "good_experience" = "Good \n Experience",
+    "friendly_rep" = "Friendly \n Representative",
+    "mood" = "Mood",
+    "time" = "Time",
+    "employee_experience" = "Employee \n Experience",
+    "spent_money" = "Spent Money",
+    "income" = "Income",
+    "need_things" = "Needs \nThings",
+    "shopaholic" = "Shopaholic",
+    "sales" = "Sales",
+    "want_things" = "Wants \n Things"
+  )
+)
+
+dag %>%
+  ggdag(use_labels = "label", text = FALSE) +
+  theme_dag() 
+```
+
+# Exercise 3
+
+```{r}
+dag %>%
+ggdag_adjustment_set(use_labels = "label", text = FALSE) 
+```
+
+With these sets of formulas, there are no way to close the backdoor paths.
+
+# Exercise 4
+
+```{r}
+customer_data <- read_csv("customer_satisfaction.csv")
+```
+
+# Exercise 5
+
+```{r}
+glimpse(customer_data)
+```
+
+After matching my variables with those included in the data set, my updated dag is below. The only ones that matched are gender, age, and income.
+
+```{r}
+dag <-
+  dagify(
+   satisfied_customer_service ~ friendly_rep + friendly_customer + mood + time + employee_experience + age + gender,
+next_spend ~ income + need_things + shopaholic + sales + want_things + gender, 
+shopaholic ~ want_things + sales + mood + gender + age,
+  exposure = "satisfied_customer_service",
+  outcome = "next_spend",
+  labels = c(
+    "satisfied_customer_service" = "Good Customer \n Service",
+    "friendly_rep" = "Friendly \n Representative",
+    "mood" = "Mood",
+    "time" = "Time",
+    "employee_experience" = "Employee \n Experience",
+    "next_spend" = "Next Spend",
+    "income" = "Income",
+    "need_things" = "Needs \nThings",
+    "shopaholic" = "Shopaholic",
+    "sales" = "Sales",
+    "want_things" = "Wants \n Things"
+  ),
+    latent = c("friendly_rep", "friendly_customer", "mood", "time", "employee_experience", "need_things", "shopaholic", "sales", "want_things")
+  )
+```
+
+
+# Exercise 6
+
+```{r}
+dag %>% 
+  ggdag_adjustment_set(use_labels = "label", text = FALSE)
+```
+After adding the available variables, there is still no way to close the backdoor paths. With this being said, I am going to slightly adjust the formulas (to hopefully include more available variables). The new dag and adjustment sets are shown below: 
+
+```{r}
+glimpse(customer_data)
+```
+
+```{r}
+dag <-
+  dagify(
+   satisfied_customer_service ~ friendly_rep + friendly_customer + mood + time + employee_experience + age + gender,
+next_spend ~ income + need_things + sales + want_things + gender + age,
+  exposure = "satisfied_customer_service",
+  outcome = "next_spend",
+  labels = c(
+    "satisfied_customer_service" = "Good Customer \n Service",
+    "friendly_rep" = "Friendly \n Representative",
+    "friendly_customer" = "Friendly Customer",
+    "age" = "Age",
+    "gender" = "Gender",
+    "mood" = "Mood",
+    "time" = "Time",
+    "employee_experience" = "Employee \n Experience",
+    "next_spend" = "Next Spend",
+    "income" = "Income",
+    "need_things" = "Needs \nThings",
+    "sales" = "Sales",
+    "want_things" = "Wants \n Things"
+  ),
+    latent = c("friendly_rep", "friendly_customer", "mood", "time", "employee_experience", "need_things", "sales", "want_things")
+  )
+
+dag %>%
+  ggdag_adjustment_set(use_labels = "label", text = FALSE)
+```
+We now see that we need to adjust for gender and age. 
+
+```{r}
+adjustment <- 
+  lm(satisfied_customer_service ~ age + gender,
+    data = customer_data) 
+```
+
+
+# Exercise 7
+
+```{r}
+customer_data_new <- 
+  adjustment %>%
+  augment(type.predict = "response",
+          data = customer_data)
+
+customer_data_new %>%
+  select(satisfied_customer_service, .fitted)
+```
+
+# Exercise 8
+
+```{r}
+#Saving the plot specs 
+df_plot_ps <- customer_data_new %>%
+  tidyr::pivot_wider(names_from = satisfied_customer_service, 
+                     values_from = .fitted, 
+                     names_prefix = "satisfied_customer_service_p")
+```
+
+```{r}
+ggplot(df_plot_ps) +
+  geom_histogram(bins = 50, 
+                 aes(x = satisfied_customer_service_p1), 
+                 fill = "deeppink2") + 
+  geom_histogram(bins = 50, 
+                 aes(x = satisfied_customer_service_p0, 
+                     y = - stat(count)), 
+                 fill = "plum4") +
+  scale_y_continuous("Count", label = abs) + 
+  scale_x_continuous("Propensity Score") +
+annotate(geom = "label",
+           x = 0.7,
+           y= 5,
+           label = "Satisfied Customer Service") +
+annotate(geom = "label",
+         x = 0.7,
+         y = -3,
+         label  = "Unsatisfied Customer Service") + 
+  theme_minimal() 
+```
+
+We see that there were not only more satisfied customers, but for the most part they all had relatively high probabilities of being satisfied. There weren't as many unsatisfied customers, but it looks like their probability of being unsatisfied was slightly lower overall than the probabilities for satisfied customers. 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Subject Areas of Expertise on Ellie Grace Moore</title>
+    <link>https://elliegracemoore.netlify.app/education/</link>
+    <description>Recent content in My Subject Areas of Expertise on Ellie Grace Moore</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 21 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://elliegracemoore.netlify.app/education/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Statistics</title>
+      <link>https://elliegracemoore.netlify.app/education/wake/</link>
+      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/education/wake/</guid>
+      <description>&amp;ldquo;I will work harder.&amp;rdquo;     This quote comes from the classic George Orwell book &amp;lt;\it Animal Farm&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>Mathematics Education</title>
+      <link>https://elliegracemoore.netlify.app/education/taylor/</link>
+      <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://elliegracemoore.netlify.app/education/taylor/</guid>
+      <description>Because Speed     Building this static site generator theme was the first time I used an Atomic (or Functional) CSS system like Tachyons. It&amp;rsquo;s a design system that provides very small (which means fast) CSS modules that you can use in your HTML. So, rather than writing every line of CSS, you apply the style you need as you write your HTML with easy to understand shorthand class names.</description>
+    </item>
+    
+  </channel>
+</rss>
