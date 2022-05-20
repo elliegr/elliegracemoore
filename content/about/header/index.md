@@ -9,10 +9,9 @@ headline: |
 <!-- this is a subheadline -->
 I'm a big data science and analytics fan :raised_hands:. Besides that, here are some other topics I love chatting about: 
 
+* Computer science and coding languages 
 * Mushroom foraging :mushroom:
-* Tidyverse and tidy data 
-* The Killers :guitar:
-* Statistical inference and communication
+* Shuffling and decks of cards
 * Art and graphic design :art:
 * Avatar: The Last Airbender 
 * Running and Nike Run Club :runner:

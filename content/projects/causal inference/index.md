@@ -7,11 +7,10 @@ excerpt: Here is a talk I gave on making awesome personal websites using Hugo, b
 featured: true
 layout: single
 links:
-- icon: github
-  icon_pack: fab
+- icon: code
+  icon_pack: fas
   name: code
-  url: https://github.com/apreshill/bakeoff
-location: Sydney, Australia
+  url: https://elliegr.github.io/website-demo/
 show_post_time: false
 title: Causal Inference
 ---

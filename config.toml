@@ -100,8 +100,6 @@ enableEmoji = true
 
 [taxonomies]
   category = "categories"
-  series = "series"
-  tag = "tags"
 
 [menu]
   # Configure header 
@@ -125,7 +123,12 @@ enableEmoji = true
     title = "Project and Code portfolio"
     url = "/projects/"
     weight = 4
-    
+  [[menu.header]]
+    name = "Currently Learning"
+    title = "Things I am Currently Learning"
+    url = "/learning/"
+    weight = 5
+
   # Configure footer  
   [[menu.footer]]
     name = "License"

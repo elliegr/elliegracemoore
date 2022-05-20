@@ -6,10 +6,10 @@ excerpt: Here are projects and code that demonstrate numerous ways to visualize 
 featured: true
 layout: single
 links:
-- icon: github
-  icon_pack: fab
+- icon: code
+  icon_pack: fas
   name: code
-  url: https://github.com/elliegr/data-viz
+  url: https://elliegr.github.io/website-demo/
 location: Sydney, Australia
 show_post_time: false
 title: Data Visualization

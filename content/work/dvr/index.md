@@ -1,6 +1,6 @@
 ---
 date: "2019-05-27"
-excerpt: Learned the value of hard work and team work while manning a ranch in Colorado.
+excerpt: Learned the value of hard work and team work while serving as the Kids and Teens Program Leader at a guest ranch in Colorado.
 layout: single
 links:
 - icon: door-open
@@ -12,6 +12,8 @@ tags:
 - hugo-site
 subtitle: Kids and Teens Program Leader
 ---
+
+This page is currently being edited :memo:
 
 ### Going Out West
 

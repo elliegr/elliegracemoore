@@ -1,19 +1,19 @@
 ---
 date: "2020-08-23"
 draft: false
-excerpt: Dove deeper into statistics and data analysis
+excerpt: Worked as a TA for multiple professors and conducted group and one-on-one tutoring in math and stats.
 layout: single
 links:
 - icon: door-open
   icon_pack: fas
   name: website
-  url: https://bakeoff.netlify.com/
+  url: https://math.wfu.edu/
+- icon: envelope
+  icon_pack: fas
+  name: reference
+  url: https://math.wfu.edu/erhardt
 subtitle: Winston-Salem, North Carolina
-tags:
-- hugo-site
 title: Wake Forest University
 ---
 
-### Let The Numbers do The Talking
-
-blah blah blah yay wake forest 
+This page is currently being edited :memo:

@@ -1,13 +1,10 @@
 ---
 date: "2020-08-21"
 draft: false
-excerpt: Dove deeper into different methods of data analysis and statistics.
+excerpt: Graduated May 2022 with an MS in Statistics.
 layout: single
-tags:
-- hugo-site
 title: Statistics 
 ---
 
-## "I will work harder."
 
-This quote comes from the classic George Orwell book <\it Animal Farm>. 
+This page is currently being edited :memo:
