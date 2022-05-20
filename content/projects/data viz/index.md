@@ -6,7 +6,7 @@ excerpt: Here are projects and code that demonstrate numerous ways to visualize 
 featured: true
 layout: single
 links:
-- icon: code
+- icon: code-branch
   icon_pack: fas
   name: code
   url: https://elliegr.github.io/website-demo/

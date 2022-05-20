@@ -8,7 +8,7 @@ excerpt: Here is a talk I gave on making awesome personal websites using Hugo, b
 featured: true
 layout: single
 links:
-- icon: code
+- icon: code-branch
   icon_pack: fas
   name: code
   url: https://elliegr.github.io/website-demo/
