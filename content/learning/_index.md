@@ -1,14 +1,13 @@
 ---
 cascade:
-  show_author_byline: false
-  show_comments: false
-  show_post_date: false
-layout: list-grid
-show_author_byline: false
-show_button_links: false
-show_post_date: false
-show_post_thumbnail: true
-title: Things I Am Currently Leaning
+  headless: true
+description: |
+  skills i want
+show_header: true
+layout: list-sidebar
+sidebar_left: false
+title: Things I am Currently Learning
 ---
 
-** No content for the project index. This file provides front matter for the blog including the layout and boolean options. **
+** index doesn't contain a body, just front matter above.
+See the header / main / sidebar folders to edit the index.md files **

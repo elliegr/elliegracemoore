@@ -11,9 +11,15 @@ links:
 - icon: envelope
   icon_pack: fas
   name: reference
-  url: https://math.wfu.edu/erhardt
+  url: https://math.wfu.edu/yengulalp
 subtitle: Winston-Salem, North Carolina
 title: Wake Forest University
 ---
 
-This page is currently being edited :memo:
+
+### Duties Performed :clipboard:
+
+  * Assisted math and stats professors with teaching and grading
+  * Acted as a liaison between students and professors 
+  * Hosted large group study sessions as well as one-on-one math and stats tutoring
+  

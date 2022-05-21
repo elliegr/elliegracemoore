@@ -2,12 +2,11 @@
 author: Ellie Grace Moore
 date: "2021-01-12"
 draft: false
-excerpt: Here is a talk I gave on making awesome personal websites using Hugo, blogdown,
-  GitHub, and Netlify.
+excerpt: Want to know whether a certain exposure has an effect on a particular outcome variable? Then check out some of my causal inference code.
 featured: true
 layout: single
 links:
-- icon: code
+- icon: code-branch
   icon_pack: fas
   name: code
   url: https://elliegr.github.io/website-demo/
@@ -15,5 +14,4 @@ show_post_time: false
 title: Causal Inference
 ---
 
-I'm really excited to give this talk! Stay tuned for video and slides.
-
+Hang tight, this page is currently being edited :memo:

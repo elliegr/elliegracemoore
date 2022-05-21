@@ -2,7 +2,7 @@
 author: Ellie Grace Moore
 date: "2021-01-12"
 draft: false
-excerpt: Here are projects and code that demonstrate numerous ways to visualize data.
+excerpt: Data may not communicate all the patterns it holds while in a data frame...so let's visualize it!
 featured: true
 layout: single
 links:

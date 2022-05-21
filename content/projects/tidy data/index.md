@@ -3,8 +3,7 @@ author: Ellie Grace Moore
 date: "2021-01-12"
 show_date: false
 draft: false
-excerpt: Here is a talk I gave on making awesome personal websites using Hugo, blogdown,
-  GitHub, and Netlify.
+excerpt: Messy datasets can be daunting and unhelpful. So let's tidy them up! 
 featured: true
 layout: single
 links:
@@ -17,5 +16,4 @@ show_post_time: false
 title: Tidy Data
 ---
 
-I'm really excited to give this talk! Stay tuned for video and slides.
-
+Hang tight, this page is currently being edited :memo:

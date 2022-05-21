@@ -11,9 +11,13 @@ links:
 - icon: envelope
   icon_pack: fas
   name: reference
-  url: https://www.taylor.edu/employees/faculty/derek-thompson
+  url: https://www.taylor.edu/employees/faculty/jeremy-case
 subtitle: Lead Tutor and Teaching Assistant
 title: Taylor University
 ---
 
-This page is currently being edited :memo:
+### Duties Performed :pencil2:
+
+  - Worked closely with math and stats professors and assisted with grading
+  - Taught multiple Calculus I, II, and III class sessions
+  - Head tutor for large group study sessions

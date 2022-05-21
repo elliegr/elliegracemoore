@@ -13,8 +13,8 @@ tags:
 subtitle: Kids and Teens Program Leader
 ---
 
-This page is currently being edited :memo:
+### Duties Perfomed :sunrise_over_mountains:
 
-### Going Out West
-
-blah blah blah Colorado this Colorado that 
+  * Provided stellar hospitality to guests as well as collaborated with other ranch hands
+  * Put together and implemented a schedule where I would lead groups of kids and teens in different activities
+  *  Learned the value of intense manual labor

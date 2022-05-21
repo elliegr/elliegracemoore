@@ -7,15 +7,14 @@ links:
   icon_pack: fas
   name: website
   url: https://capcityfinediner.com/
-subtitle: Some of The Finest Food in Columbus, OH
+subtitle: Great People Delivering Genuine Hospitality
 title: Cameron Mitchell Restaurants
 ---
 
-This page is currently being edited :memo:
+### Duties Perfomed :fork_and_knife:
 
-### Cap City Fine Diner & Bar
-
-things about cap city here
-
-###  The Avenue Steak Tavern
+  - Communication bridge between guests and staff 
+  - Trained new hires at both Cap City Fine Diner and The Avenue Steak Tavern
+  - Sought out to make sure guests received the best hospitality possible
+  - Ensured each staff member is providing high quality service 
 
