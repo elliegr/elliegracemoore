@@ -93,9 +93,9 @@ enableEmoji = true
       icon_pack = "fab"
       url       = "https://www.facebook.com/elliegrace.moore"
   [[params.social]]
-      icon      = "twitter" # icon name without the 'fa-'
+      icon      = "linkedin" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://twitter.com/hashtag/apéro"
+      url       = "https://www.linkedin.com/in/elliegracemoore"
 
 
 [taxonomies]
