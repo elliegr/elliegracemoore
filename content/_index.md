@@ -10,7 +10,7 @@ show_action_link: true
 show_social_links: true
 subtitle: MS in Statistics
 text_align_left: false
-title: Ellie Grace Moore 
+title: Ellie Grace O'Connnor (Moore) 
 type: home
 ---
 
