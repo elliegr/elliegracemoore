@@ -9,10 +9,11 @@ headline: |
 <!-- this is a subheadline -->
 I'm a big data science and analytics fan :raised_hands:. Besides that, here are some other topics I love chatting about: 
 
-* Computer science and coding languages 
+* Nutrition :carrot:
+* Running and Nike Run Club #CoachBennett
 * Mushroom foraging :mushroom:
-* Shuffling and decks of cards
-* Art and graphic design :art:
+* Oregon wine
+* Gourmet coffee and tea :coffee:
 * Avatar: The Last Airbender 
-* Running and Nike Run Club :runner:
+* Graphic and interior design :art:
 
